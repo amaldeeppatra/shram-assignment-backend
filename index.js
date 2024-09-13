@@ -17,7 +17,7 @@ app.use(cors({ origin: 'http://localhost:5173' }));
 mongoose.connect(process.env.mongoDBUrl).then((e) => console.log("Mongodb connected"));
 
 app.use('/api/users', authRoute);
-app.use('/api/users', scoreRoute);
+app.use('/api/scores', scoreRoute);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
