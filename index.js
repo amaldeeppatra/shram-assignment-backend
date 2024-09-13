@@ -16,6 +16,7 @@ app.use(cors({ origin: 'https://shram-assignment.vercel.app' }));
 
 mongoose.connect(process.env.mongoDBUrl).then((e) => console.log("Mongodb connected"));
 
+// api routes
 app.use('/api/users', authRoute);
 app.use('/api/scores', scoreRoute);
 

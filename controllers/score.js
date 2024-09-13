@@ -1,5 +1,6 @@
 const User = require('../models/user');
 
+// function to update the score
 async function handleUpdateScore(req, res){
   const { userId, score } = req.body;
 
@@ -18,6 +19,7 @@ async function handleUpdateScore(req, res){
 }
 
 
+// function to get high score and past scores using user id
 async function handleUserScore(req, res){
   const { userId } = req.params;
   try {

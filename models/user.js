@@ -27,6 +27,7 @@ const userSchema = new Schema({
     }
 }, { timestamps: true });
 
+// hashing the password before storing in DB
 userSchema.pre("save", function (next) {
     const user = this;
 
@@ -43,6 +44,7 @@ userSchema.pre("save", function (next) {
     next();
 });
 
+// unhashing the password for checking whether correct
 userSchema.static("matchPasswordAndGenerateToken", async function (username, password) {
     const user = await this.findOne({ username });
     if (!user) throw new Error("User not found!");
