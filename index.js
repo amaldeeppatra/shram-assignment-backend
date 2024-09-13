@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: 'https://shram-assignment.vercel.app' }));
 
 mongoose.connect(process.env.mongoDBUrl).then((e) => console.log("Mongodb connected"));
 
